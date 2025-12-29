@@ -1,29 +1,92 @@
-/* Portfolio */
-.portfolio .portfolio-overlay {
-  transition: opacity 0.4s ease;
+/* Portfolio Overrides para compatibilidad con main.css */
+.portfolio {
+  padding: var(--spacing-2xl) 0;
 }
-.portfolio .portfolio-content:hover .portfolio-overlay {
+
+.portfolio .section-title h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.portfolio-filters li {
+  cursor: pointer;
+  transition: var(--transition-normal);
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+.portfolio-filters .filter-active {
+  background: var(--gradient-red);
+  color: var(--text-primary) !important;
+  box-shadow: var(--shadow-glow);
+}
+
+.portfolio-filters li:hover {
+  color: var(--text-primary);
+  background: rgba(230, 57, 70, 0.1);
+}
+
+.portfolio-content {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  box-shadow: var(--shadow-md);
+}
+
+.portfolio-content:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.portfolio-content img {
+  transition: var(--transition-slow);
+}
+
+.portfolio-content:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  transition: opacity var(--transition-smooth);
+}
+
+.portfolio-content:hover .portfolio-overlay {
   opacity: 1 !important;
 }
-.portfolio .portfolio-content img {
-  transition: transform 0.4s ease;
+
+.portfolio-overlay a {
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
 }
-.portfolio .portfolio-content:hover img {
+
+.portfolio-overlay a:hover {
+  color: var(--primary-red);
   transform: scale(1.1);
 }
 
-/* Filtros */
-.portfolio-filters .btn {
-  transition: all 0.3s;
-}
-.portfolio-filters .filter-active {
-  background-color: var(--color-primary) !important;
-  color: white !important;
+/* Clase custom para botones de filtro (reemplaza btn) */
+.custom-btn {
+  background: var(--surface-dark);
+  border: 1px solid rgba(230, 57, 70, 0.2);
+  color: var(--text-primary);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--radius-full);
+  transition: var(--transition-normal);
 }
 
-/* Responsive fixes */
-@media (max-width: 768px) {
-  .portfolio-filters li {
-    margin-bottom: 10px;
+.custom-btn:hover {
+  background: var(--primary-red);
+  border-color: var(--primary-red);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .portfolio-filters {
+    justify-content: start !important;
+    overflow-x: auto;
+    padding-bottom: 1rem;
   }
 }
