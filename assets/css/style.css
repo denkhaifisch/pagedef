@@ -1,0 +1,29 @@
+/* Portfolio */
+.portfolio .portfolio-overlay {
+  transition: opacity 0.4s ease;
+}
+.portfolio .portfolio-content:hover .portfolio-overlay {
+  opacity: 1 !important;
+}
+.portfolio .portfolio-content img {
+  transition: transform 0.4s ease;
+}
+.portfolio .portfolio-content:hover img {
+  transform: scale(1.1);
+}
+
+/* Filtros */
+.portfolio-filters .btn {
+  transition: all 0.3s;
+}
+.portfolio-filters .filter-active {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .portfolio-filters li {
+    margin-bottom: 10px;
+  }
+}
