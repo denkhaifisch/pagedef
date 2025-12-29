@@ -90,3 +90,103 @@
     padding-bottom: 1rem;
   }
 }
+
+
+/* Services Overrides para compatibilidad con main.css */
+.services {
+  padding: var(--spacing-2xl) 0;
+}
+
+.services .section-title h2 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+}
+
+.services .badge {
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  transition: var(--transition-normal);
+}
+
+.services .stat-item {
+  min-width: 80px;
+}
+
+.services .stat-number {
+  line-height: 1;
+}
+
+.services .card {
+  min-height: 350px; /* Para alinear heights en filas */
+}
+
+.services .card:hover {
+  box-shadow: var(--shadow-glow);
+  border-color: var(--primary-red) !important;
+}
+
+.services .card:hover i {
+  transform: scale(1.1);
+}
+
+.services .service-features li {
+  font-size: 0.9375rem;
+  margin-bottom: 0.5rem;
+  transition: color var(--transition-fast);
+}
+
+.services .service-features li:hover {
+  color: var(--text-primary);
+}
+
+.services .btn-outline {
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+}
+
+.services .btn-outline:hover {
+  background: var(--primary-red);
+  color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .services .stat-item {
+    flex: 1;
+  }
+}
+
+
+/* MEJORA DE CONTRASTE - Textos comunes más legibles (sin tocar rojos ni efectos) */
+
+.services .text-secondary,
+.portfolio .text-muted,
+.services .stat-label,
+.services .service-features li,
+.portfolio-overlay .text-muted,
+.service-summary-premium p,
+.service-features li {
+  color: rgba(255, 255, 255, 0.85) !important; /* Blanco suave con ligera transparencia */
+}
+
+.services .service-features i,
+.portfolio-overlay i,
+.services i.bi-check-circle-fill {
+  color: rgba(255, 255, 255, 0.9) !important; /* Íconos más visibles */
+}
+
+.services .stat-label,
+.portfolio .entry-meta {
+  color: rgba(255, 255, 255, 0.7) !important; /* Labels de stats un poco más suaves pero legibles */
+}
+
+/* Números grandes de stats mantienen el gradiente rojo (no tocar) */
+/* Textos con clase text-gradient siguen siendo rojos (intactos) */
+
+/* Opcional: si quieres aún más contraste en descripciones largas */
+.services p.text-secondary,
+.portfolio-overlay p {
+  color: #ffffff !important; /* Blanco puro para párrafos */
+}
+
+/* Mantener hover effects intactos (no tocar transiciones ni glows) */
